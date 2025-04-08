@@ -181,7 +181,7 @@ def get_config(
     used_ports = shared_utils.get_port_specs(used_port_assignments)
 
     cmd = [
-        "geth",
+        "qemu-x86_64 -d exec -D /tmp/qemu_cov.log geth",
         # Disable path based storage scheme for electra fork and verkle
         # TODO: REMOVE Once geth default db is path based, and builder rebased
         "{0}".format(
